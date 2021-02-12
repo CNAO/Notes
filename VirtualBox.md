@@ -14,3 +14,12 @@ In general two steps are taken:
   running process:
 
   `0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%`
+
+### Second step - examples
+* guest: Ubuntu 16.04
+  This operation is done with `gparted`, a utility for managing HD partitions available in Linux. In order to operate on the HD without issues, it is necessary to access the machine via the ISO CD.
+  1. insert the ISO CD of Ubuntu 16.04. When asked: `Try Ubuntu`
+  1. you may need to delete the swap partition (from [askubuntu](https://askubuntu.com/questions/349987/do-i-have-to-move-swap-partition-to-the-right-side), credits Sadi):
+      * Select the partition, right-click `Swapoff` (to unmount the swap partition so that you can perform operations on it);
+      * Delete Swap partition, which will create a larger unallocated space at the end of the partition you want to expand;
+      * Create one or more partitions as you need and then re-create the Swap partition at the end.

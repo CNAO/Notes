@@ -70,6 +70,13 @@ Everything is done via the web interface on github.com:
 ## Git for Windows
 git is also available for windows (see References for the download/manual page). The package comes with a windows GUI, for native Windows users, and a bash emulator, suitable for linux-minded users.
 
+### Use ssh key in a non-default location
+Especially with Git Bash, the ssh key is stored in an unconfortable path (e.g. `H`).
+A key in a more sensible path can be generated, but should be loaded at every git operation implying communcation with the github.com server.
+Here is an example:
+
+```ssh-agent bash -c 'ssh-add <pathToPRIVATEkey> ; git push origin --delete add_converter'```
+
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));
 * more on `git upstream`: [git docs](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote "git docs");

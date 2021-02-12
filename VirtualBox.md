@@ -7,5 +7,10 @@ In general two steps are taken:
 2. partition the added space
 
 ### First step - examples
-* host: Windows 7 Pro; VirtualBox: 5.1.2
+* host: Windows 7 Pro; VirtualBox: 5.1.2.
 
+  `H:\>"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyhd "u:\ALESSIO\VirtualMachines\ubuntu_test\ubuntu_test.vdi" --resize 200000`
+
+  running process:
+
+  `0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%`

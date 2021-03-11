@@ -54,7 +54,7 @@ Nota Bene:
 * differences between *two branches*: `git diff devel..main`
 The command will show the differences between the `devel` and `main` branches, as if you were going to merge the `main` branch onto the `devel` one on your local machine.
 
-### Pull Reuests (PRs)
+### Pull Requests (PRs)
 Pull requests are changesets of code that should be merged on the project main branch.
 
 #### How to create a PR
@@ -76,6 +76,12 @@ A key in a more sensible path can be generated, but should be loaded at every gi
 Here is an example:
 
 ```ssh-agent bash -c 'ssh-add <pathToPRIVATEkey> ; git push origin --delete add_converter'```
+
+## Tips and Tricks
+### Large differences
+In many case, there might be large differences between two branches or in a PR. Most of the times, it is a matter of indentation, new lines characters, spacing, etc...
+Hence, it is nice to show the diff ignoring whitespace, e.g. appending `?w=1` to the URL of the diff on github.com, e.g.
+```https://github.com/CNAO/MatLabTools/pull/7/files?w=1```
 
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));

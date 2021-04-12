@@ -85,13 +85,16 @@ Hence, it is nice to show the diff ignoring whitespace, e.g. appending `?w=1` to
 
 ### Git submodules
 Git has the possibility to add submodules to a repo, i.e. to incorporate a third-party repo into your own one.
-Procedure:
+The procedure to add the external repo:
 
 1. To add it:
 ```git submodule add https://github.com/CNAO/MatLabTools.git externals/MatLabTools```
 This command will generate the folder specified as path and populate it with the latest main.
 1. If you want to point to a different branch: ```cd externals/MatLabTools ; git checkout -t origin/<MyBranchName> ; cd - ```
 1. Please do not forget to commit: ```git add .gitmodules externals/MatLabTools ; git commit```
+
+The procedure to keep it up to date is simply to ```git pull``` the concerned branch from the respective original repo. You can find the info in the `.gitmodules` file.
+
 
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));

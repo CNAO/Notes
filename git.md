@@ -67,6 +67,10 @@ Everything is done via the web interface on github.com:
 * add your final judgment to the PR ("revision"): from the "Files Changed" tab, click on "Review Changes", select the action that is appropriate and possibly leave a comment;
 * in case the PR is ready for merging, merge it: go back to the "Conversation" tab and click on "Merge pull request".
 
+### Delete a branch
+* delete branch locally (i.e. only on your local computer): `git branch -d localBranchName`. Use `-D` instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet;
+* delete branch remotely (i.e. on your fork): `git push origin --delete remoteBranchName`.
+
 ## Git for Windows
 git is also available for windows (see References for the download/manual page). The package comes with a windows GUI, for native Windows users, and a bash emulator, suitable for linux-minded users.
 

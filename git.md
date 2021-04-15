@@ -109,6 +109,10 @@ If you want to undo some of the latest commits, you have to (credits to [CBBaile
 ### Abort a Merge
 You can abort an on-going merge before resolving conflicts via `git merge --abort`.
 
+### Deleting a Branch
+* delete a branch locally: `git branch -d localBranchName`;
+* delete a branch remotely: `git push origin --delete remoteBranchName`;
+
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));
 * more on `git upstream`: [git docs](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote "git docs");

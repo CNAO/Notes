@@ -99,6 +99,12 @@ This command will generate the folder specified as path and populate it with the
 
 The procedure to keep it up to date is simply to ```git pull``` the concerned branch from the respective original repo. You can find the info in the `.gitmodules` file.
 
+### Get a Branch Back to a Specific Commit
+If you want to undo some of the latest commits, you have to (credits to [CBBailey](https://stackoverflow.com/questions/1895059/revert-to-a-commit-by-a-sha-hash-in-git "CBBailey"))
+1. identify the specific commit. `git log` can help you in displaying the logs of the branch;
+2. reset the status of the branch to the desired commit: `git reset --hard 56e05fced`;
+3. move the branch pointer back to the previous HEAD: `git reset --soft HEAD@{1}`;
+4. `git commit -m "Revert to 56e05fced"`
 
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));

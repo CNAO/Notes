@@ -13,6 +13,13 @@ Please make use of the `ssh` mechanism for cloning, such that you have also writ
 * add the project repo as `remote upstream`: `git remote add upstream <git_URL_of_project_repo>`;
 Please make use of the `https` mechanism, such that you don't have write rights and an accidental push to the project repo is hence rejected.
 
+### Branch off from a Branch from a Third-Party Fork
+* add the fork as `remote <remote_nickname>`: `git remote add EFfork https://github.com/enricofelcini/gantry.git`;
+Please make use of the `https` mechanism, such that you don't have write rights and an accidental push to the project repo is hence rejected;
+* download the fork, e.g. `git fetch EFfork`. Please make sure that the owner of the fork has `git push`-ed all the relevant material;
+* branch off from the desired branch, e.g. `git checkout -t EFfork/4T_DT1_config4_MF`;
+* you can now develop as in a personal branch;
+
 ### Carry out your development
 #### Initialise development
 When you start your development, please create a suitable branch: `git checkout -b <my_devel_branch>`.

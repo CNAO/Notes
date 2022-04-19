@@ -96,6 +96,8 @@ If you are sure that you won't need to change any file in the git submodule, you
 1. To create a specific branch: ```cd externals/MatLabTools ; git checkout -t origin/RPdataAnalysis ; cd - ```
 1. To commit the changes: ```git add .gitmodules externals/MatLabTools ; git commit```
 
+In any case, if the branch of the git submodule does not exist in the repo you are going to use, please create the brand new branch via the command `git checkout -b <MyBranchName>` instead of tracking the branch in the repo via the command `git checkout -t origin/<MyBranchName>`.
+
 ### Removing a Git submodule
 In case you need to remove a git submodule ([source](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)):
 

@@ -93,8 +93,7 @@ This command will generate the folder specified as path and populate it with the
 ### Removing a Git submodule
 In case you need to remove a git submodule ([source](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)):
 
-1. Delete the relevant section from the `.gitmodules` file and stage the changes: `git add .gitmodules`;
-1. Delete the relevant section from `.git/config`;
+1. Delete the relevant section from the `.gitmodules` and `.git/config` files and stage the changes: `git add .gitmodules .git/config`;
 1. Remove the submodule files from the working tree and index: `git rm --cached path_to_submodule` (no trailing slash);
 1. Remove the submodule's .git directory: `rm -rf .git/modules/path_to_submodule`;
 1. Commit the changes: `git commit -m "Removed submodule <name>"`;

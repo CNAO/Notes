@@ -90,6 +90,12 @@ This command will generate the folder specified as path and populate it with the
 1. If you want to point to a different branch: ```cd externals/MatLabTools ; git checkout -t origin/<MyBranchName> ; cd - ```
 1. Please do not forget to commit: ```git add .gitmodules externals/MatLabTools ; git commit```
 
+If you are sure that you won't need to change any file in the git submodule, you can directly point to the project repo. Otherwise, if you know that you might need to change some files in the git submodule, it is wise to fork the repo of the submodule, and work on a clone of your fork, possibly on a specific branch, such that you can then easily import/export changes via the usual process of the PRs on the project repo of the submodule. Therefore, the steps are:
+
+1. To add it: ```git submodule add https://github.com/amereghe/MatLabTools.git externals/MatLabTools```
+1. To create a specific branch: ```cd externals/MatLabTools ; git checkout -t origin/RPdataAnalysis ; cd - ```
+1. To commit the changes: ```git add .gitmodules externals/MatLabTools ; git commit```
+
 ### Removing a Git submodule
 In case you need to remove a git submodule ([source](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)):
 

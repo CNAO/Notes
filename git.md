@@ -78,6 +78,31 @@ Everything is done via the web interface on github.com:
 * delete branch locally (i.e. only on your local computer): `git branch -d localBranchName`. Use `-D` instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet;
 * delete branch remotely (i.e. on your fork): `git push origin --delete remoteBranchName`.
 
+## Git submodules
+Git has the possibility to add submodules to a repo, i.e. to incorporate a third-party repo into your own one.
+
+### Adding a Git submodule
+The procedure to add a git submodule (i.e. an external repo):
+
+1. To add it:
+```git submodule add https://github.com/CNAO/MatLabTools.git externals/MatLabTools```
+This command will generate the folder specified as path and populate it with the latest main.
+1. If you want to point to a different branch: ```cd externals/MatLabTools ; git checkout -t origin/<MyBranchName> ; cd - ```
+1. Please do not forget to commit: ```git add .gitmodules externals/MatLabTools ; git commit```
+
+### Removing a Git submodule
+In case you need to remove a git submodule ([source](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)):
+
+1. Delete the relevant section from the `.gitmodules` file and stage the changes: `git add .gitmodules`;
+1. Delete the relevant section from `.git/config`;
+1. Remove the submodule files from the working tree and index: `git rm --cached path_to_submodule` (no trailing slash);
+1. Remove the submodule's .git directory: `rm -rf .git/modules/path_to_submodule`;
+1. Commit the changes: `git commit -m "Removed submodule <name>"`;
+1. Delete the now untracked submodule files: `rm -rf path_to_submodule`.
+
+### Keeping the Git submodule up-to-date
+The procedure to keep it up to date is simply to ```git pull``` the concerned branch from the respective original repo. You can find the info in the `.gitmodules` file.
+
 ## Git for Windows
 git is also available for windows (see References for the download/manual page). The package comes with a windows GUI, for native Windows users, and a bash emulator, suitable for linux-minded users.
 
@@ -93,18 +118,6 @@ Here is an example:
 In many case, there might be large differences between two branches or in a PR. Most of the times, it is a matter of indentation, new lines characters, spacing, etc...
 Hence, it is nice to show the diff ignoring whitespace, e.g. appending `?w=1` to the URL of the diff on github.com, e.g.
 ```https://github.com/CNAO/MatLabTools/pull/7/files?w=1```
-
-### Git submodules
-Git has the possibility to add submodules to a repo, i.e. to incorporate a third-party repo into your own one.
-The procedure to add the external repo:
-
-1. To add it:
-```git submodule add https://github.com/CNAO/MatLabTools.git externals/MatLabTools```
-This command will generate the folder specified as path and populate it with the latest main.
-1. If you want to point to a different branch: ```cd externals/MatLabTools ; git checkout -t origin/<MyBranchName> ; cd - ```
-1. Please do not forget to commit: ```git add .gitmodules externals/MatLabTools ; git commit```
-
-The procedure to keep it up to date is simply to ```git pull``` the concerned branch from the respective original repo. You can find the info in the `.gitmodules` file.
 
 ### Get a Branch Back to a Specific Commit
 If you want to undo some of the latest commits, you have to (credits to [CBBailey](https://stackoverflow.com/questions/1895059/revert-to-a-commit-by-a-sha-hash-in-git "CBBailey"))

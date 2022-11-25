@@ -27,6 +27,7 @@ This file summarises some infos concerning our VM Linux machines.
 ### Environment variables
 ```
 # .bashrc
+# env vars for FLUKA
 export FLUPRO=/usr/local/FLUKA/INFN/2021.2.8
 export FLUKA=/usr/local/FLUKA/INFN/2021.2.8
 export FLUFOR=gfortran

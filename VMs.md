@@ -2,7 +2,7 @@
 This file summarises some infos concerning our VM Linux machines.
 
 ## Ubuntu 22.04 LTS on Win machine WS0040
-Useful paths
+### Useful paths
 | *VM Path* | *Description* | 
 | --- | --- |
 | `/home/<username>` | home folder of each user. Desktop is found at `/home/<username>/Desktop` |
@@ -12,11 +12,23 @@ Useful paths
 | `/mnt/hgfs/Area_Ricerca` | mount path of shared folder `S:\Area Ricerca`. |
 | `/mnt/hgfs/VBSHARE` | mount path of shared folder `D:\VMs\VBSHARE`. |
 
-Useful exes:
+### Useful exes
 | *Path* | *Description* | 
 | --- | --- |
 | `/mnt/hgfs/TCNAO/MADX/5.07.00/madx-linux64.gnu` | MADX ver 5.07.00 |
 
-# Some useful commands
+### Groups
+| *group name* | *Description* |
+| --- | --- |
+| `fluka` | people able to run FLUKA on the VM |
+| `rwdata` | people able to read and write on the DATA path |
+
+### Environment variables
+```
+# .bashrc
+export FLUPRO=
+```
+
+# Some useful admin commands
 * add new group `$ sudo addgroup <myGroupName>`  (from [link](https://subscription.packtpub.com/book/networking-&-servers/9781785883064/1/ch01lvl1sec12/creating-a-group));
 * add existing user to existing group: `$ sudo usermod -aG <myGroupName> <myUserName>` (from [link](https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/));

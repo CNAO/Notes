@@ -58,11 +58,13 @@ Required by FLUKA:
 | gfortran | `sudo apt-get install gfortran` | gnu `fortran` compiler |
 
 Required by FLAIR:
+| *name* | *install command* | *comment* |
+| --- | --- | --- |
 | numpy | `sudo apt-get install python3-numpy` | `python3` module for numerical calculus |
 | scipy | `sudo apt-get install python3-scipy` | `python3` module for scientific calculus |
 | dicom | `sudo apt-get install python3-dicom` | `python3` module for handling dicom images |
 | gnuplot | `sudo apt-get install gnuplot` | plotting language |
-| | `sudo apt install libx11-dev tcl-dev tk-dev` | various support libs |
+|  | `sudo apt install libx11-dev tcl-dev tk-dev python3-tk` | various support libs |
 
 Notes:
 * to install google chrome from terminal:
@@ -84,12 +86,13 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 7. Compile: `make ; $FLUPRO/flutil/ldpmqmd`
 8. Make installation available for the linux group `fluka`: `chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `cd ../../../ ;  chown -R root:fluka FLUKA`
 
-* Further notes on the FLUKA installation can be found on the [FLUKA website](http://www.fluka.org/fluka.php?id=ins_run&mm2=3)
+Further notes on the FLUKA installation can be found on the [FLUKA website](http://www.fluka.org/fluka.php?id=ins_run&mm2=3)
 
 # Cheat Sheet for Installing FLAIR
 1. Download `.tar.gz` files from the [FLAIR website](https://www.fluka.org/flair/download.html); 
-2. Prepare the folder where to install FLAIR: `cd /usr/local ; sudo mkdir -p FLAIR/INFN ; cd FLAIR/INFN`
-3. Move downloaded `.tar.gz` files and extract them: `sudo mv ~/Downloads/flair* . ; sudo su ; tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`
-4. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; cd -`
+2. Extract downloaded `.tar.gz` files: `sudo su ; tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`
+4. Install `flair`: `cd flair-2.3 ; make install ; cd -`
+5. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; make install ; cd -`
+8. Make installation available for the linux group `fluka`: `cd /usr/local/flair ; chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `chown -R root:fluka .`
 
-* Further notes on the FLUKA installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)
+Further notes on the FLAIR installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)

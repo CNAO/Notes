@@ -46,6 +46,9 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | meld | `sudo apt-get install meld` | text file editor - useful for comparing text files |
 | git | `sudo apt-get install git` | revision tracking system |
 | gparted | `sudo apt-get install gparted` | tool to partition filesystem |
+| gcc | `sudo apt-get install gcc` | gnu `C` compiler (includes `libc`) |
+| gfortran | `sudo apt-get install gfortran` | gnu `fortran` compiler |
+| make | `sudo apt-get install make` | Linux utility to compile exes |
 
 Notes:
 * to install google chrome from terminal:
@@ -56,3 +59,12 @@ sudo chown -Rv _apt:root ./google-chrome-stable_current_amd64.deb
 sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
+
+# CheatSheet for Installing FLUKA
+1. Prepare a `fluka` linux group and add all the concerned users (including `root`): `sudo addgroup fluka; sudo usermod -aG fluka root`
+2. Prepare the folder where to install FLUKA: `cd /usr/local ; sudo mkdir -p FLUKA/INFN/2021.2.9 ; cd FLUKA/INFN/2021.2.9`
+3. Move downloaded `.tar.gz` files and extract them: `sudo mv ~/Download/fluka2021.2* . ; sudo su ; tar -xvzf fluka2021.2-data.tar.gz ; tar -xvzf fluka2021.2-linux-gfor64bit-11.2-AA.tar.gz`
+4. Become super-user: `sudo su`;
+5. Prepare environment for installation: `export FLUPRO=$WPD ; export FLUFOR=gfortran`
+6. Compile: `make ; $FLUPRO/flutil/ldpmqmd`
+7. Make installation available for the linux group `fluka`: `chmod -R a+r . ; chmod a+x flukahp flukadpm3`

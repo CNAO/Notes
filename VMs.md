@@ -36,3 +36,23 @@ export FLUFOR=gfortran
 # Some useful admin commands
 * add new group `$ sudo addgroup <myGroupName>`  (from [link](https://subscription.packtpub.com/book/networking-&-servers/9781785883064/1/ch01lvl1sec12/creating-a-group));
 * add existing user to existing group: `$ sudo usermod -aG <myGroupName> <myUserName>` (from [link](https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/));
+
+# Some useful programs
+Nota bene: installation commands are referred to Ubuntu 22.04 LTS
+| *name* | *install command* | *comment* |
+| --- | --- | --- |
+| google chrome | see Notes | web browser |
+| emacs | `sudo apt-get install emacs` | text file editor |
+| meld | `sudo apt-get install meld` | text file editor - useful for comparing text files |
+| git | `sudo apt-get install git` | revision tracking system |
+| gparted | `sudo apt-get install gparted` | tool to partition filesystem |
+
+Notes:
+* to install google chrome from terminal:
+```
+cd ~/Downloads
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo chown -Rv _apt:root ./google-chrome-stable_current_amd64.deb
+sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+```

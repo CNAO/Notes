@@ -46,9 +46,23 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | meld | `sudo apt-get install meld` | text file editor - useful for comparing text files |
 | git | `sudo apt-get install git` | revision tracking system |
 | gparted | `sudo apt-get install gparted` | tool to partition filesystem |
+| tkdiff | `sudo apt-get install tkdiff` | a tool for diffing ASCII files (includes `tk` and `libtk`) |
+| make | `sudo apt-get install make` | Linux utility to compile exes |
+| xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |
+| htop | `sudo apt-get install htop` | a user friendly interface to linux `top` |
+
+Required by FLUKA:
+| *name* | *install command* | *comment* |
+| --- | --- | --- |
 | gcc | `sudo apt-get install gcc` | gnu `C` compiler (includes `libc`) |
 | gfortran | `sudo apt-get install gfortran` | gnu `fortran` compiler |
-| make | `sudo apt-get install make` | Linux utility to compile exes |
+
+Required by FLAIR:
+| numpy | `sudo apt-get install python3-numpy` | `python3` module for numerical calculus |
+| scipy | `sudo apt-get install python3-scipy` | `python3` module for scientific calculus |
+| dicom | `sudo apt-get install python3-dicom` | `python3` module for handling dicom images |
+| gnuplot | `sudo apt-get install gnuplot` | plotting language |
+| | `sudo apt install libx11-dev tcl-dev tk-dev` | various support libs |
 
 Notes:
 * to install google chrome from terminal:
@@ -60,11 +74,22 @@ sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
-# CheatSheet for Installing FLUKA
+# Cheat Sheet for Installing FLUKA
 1. Prepare a `fluka` linux group and add all the concerned users (including `root`): `sudo addgroup fluka; sudo usermod -aG fluka root`
-2. Prepare the folder where to install FLUKA: `cd /usr/local ; sudo mkdir -p FLUKA/INFN/2021.2.9 ; cd FLUKA/INFN/2021.2.9`
-3. Move downloaded `.tar.gz` files and extract them: `sudo mv ~/Download/fluka2021.2* . ; sudo su ; tar -xvzf fluka2021.2-data.tar.gz ; tar -xvzf fluka2021.2-linux-gfor64bit-11.2-AA.tar.gz`
-4. Become super-user: `sudo su`;
-5. Prepare environment for installation: `export FLUPRO=$WPD ; export FLUFOR=gfortran`
-6. Compile: `make ; $FLUPRO/flutil/ldpmqmd`
-7. Make installation available for the linux group `fluka`: `chmod -R a+r . ; chmod a+x flukahp flukadpm3`
+2. Download `.tar.gz` files from the [fluka website](https://www.fluka.org/fluka.php?id=download&sub=packages_ok); 
+3. Prepare the folder where to install FLUKA: `cd /usr/local ; sudo mkdir -p FLUKA/INFN/2021.2.9 ; cd FLUKA/INFN/2021.2.9`
+4. Move downloaded `.tar.gz` files and extract them: `sudo mv ~/Downloads/fluka2021.2* . ; sudo su ; tar -xvzf fluka2021.2-data.tar.gz ; tar -xvzf fluka2021.2-linux-gfor64bit-11.2-AA.tar.gz`
+5. Become super-user: `sudo su`;
+6. Prepare environment for installation: `export FLUPRO=$WPD ; export FLUFOR=gfortran`
+7. Compile: `make ; $FLUPRO/flutil/ldpmqmd`
+8. Make installation available for the linux group `fluka`: `chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `cd ../../../ ;  chown -R root:fluka FLUKA`
+
+* Further notes on the FLUKA installation can be found on the [FLUKA website](http://www.fluka.org/fluka.php?id=ins_run&mm2=3)
+
+# Cheat Sheet for Installing FLAIR
+1. Download `.tar.gz` files from the [FLAIR website](https://www.fluka.org/flair/download.html); 
+2. Prepare the folder where to install FLAIR: `cd /usr/local ; sudo mkdir -p FLAIR/INFN ; cd FLAIR/INFN`
+3. Move downloaded `.tar.gz` files and extract them: `sudo mv ~/Downloads/flair* . ; sudo su ; tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`
+4. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; cd -`
+
+* Further notes on the FLUKA installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)

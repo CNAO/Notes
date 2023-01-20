@@ -68,6 +68,10 @@ export FLUFOR=gfortran
 | `fluka` | people able to run FLUKA on the VM |
 | `rwdata` | people able to read and write on the DATA path |
 
+### Adding a new user
+* add them to the necessary groups;
+* create a dedicated folder on `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
+
 ### Environment variables
 ```
 # .bashrc

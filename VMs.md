@@ -74,6 +74,7 @@ export FLUFOR=gfortran
 * add existing user to existing group: `$ sudo usermod -aG <myGroupName> <myUserName>` (from [link](https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/));
 * mount shared folders (VMware):
 `sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000` (from [link](https://askubuntu.com/questions/29284/how-do-i-mount-shared-folders-in-ubuntu-using-vmware-tools))
+* to enter bios: press `F2`;
 
 # Some useful programs
 Nota bene: installation commands are referred to Ubuntu 22.04 LTS

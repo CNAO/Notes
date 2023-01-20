@@ -15,7 +15,7 @@ This file summarises some infos concerning our VM Linux machines.
 ### Useful exes
 | *Path* | *Description* | 
 | --- | --- |
-| `/mnt/hgfs/TCNAO/MADX/5.07.00/madx-linux64.gnu` | MADX ver 5.07.00 |
+| `/mnt/hgfs/TCNAO/ARicerca/MADX/5.07.00/madx-linux64-gnu` | MADX ver 5.07.00 |
 | `/usr/local/FLUKA/INFN/2021.2.8` | INFN Fluka 2021.2.8 |
 
 ### Groups
@@ -23,6 +23,10 @@ This file summarises some infos concerning our VM Linux machines.
 | --- | --- |
 | `fluka` | people able to run FLUKA on the VM |
 | `rwdata` | people able to read and write on the DATA path |
+
+### Adding a new user
+* add them to the necessary groups;
+* create a dedicated folder on `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
 
 ### Environment variables
 ```
@@ -55,7 +59,7 @@ export FLUFOR=gfortran
 ### Useful exes
 | *Path* | *Description* | 
 | --- | --- |
-| `/mnt/hgfs/TCNAO/MADX/5.07.00/madx-linux64.gnu` | MADX ver 5.07.00 |
+| `/mnt/hgfs/TCNAO/ARicerca/MADX/5.07.00/madx-linux64-gnu` | MADX ver 5.07.00 |
 | `/usr/local/FLUKA/INFN/2021.2.9` | INFN Fluka 2021.2.9 |
 
 ### Groups

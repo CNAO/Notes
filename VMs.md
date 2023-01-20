@@ -33,6 +33,14 @@ export FLUKA=/usr/local/FLUKA/INFN/2021.2.8
 export FLUFOR=gfortran
 ```
 
+### File System Table
+```
+# Use shared folders between VMWare guest and host
+.host:/         /mnt/hgfs    fuse.vmhgfs-fuse    defaults,allow_other     0    0
+# permanently mount DATA readable and writeable by every user
+/dev/sda4	/mnt/DATA	ext4	defaults	0	0
+```
+
 ## Ubuntu 22.04 LTS on Win machine WS0024
 ### Useful paths
 | *VM Path* | *Description* | 

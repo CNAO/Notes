@@ -49,6 +49,7 @@ export FLUFOR=gfortran
 | `/mnt/hgfs/PCNAO` | mount path of shared disk `P:`. Read only! |
 | `/mnt/hgfs/TCNAO` | mount path of shared disk `T:`. Read only! |
 | `/mnt/hgfs/Area_Ricerca` | mount path of shared folder `S:\Area Ricerca`. |
+| `/mnt/hgfs/ScambioClinicaTecnica` | mount path of shared folder `S:\ScambioClinicaTecnica`. |
 | `/mnt/hgfs/VBSHARE` | mount path of shared folder `U:\VMs\VBSHARE`. |
 
 ### Useful exes

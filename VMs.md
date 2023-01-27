@@ -109,6 +109,7 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | make | `sudo apt-get install make` | Linux utility to compile exes |
 | xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |
 | htop | `sudo apt-get install htop` | a user friendly interface to linux `top` |
+| rclone | see Notes | command-line interface for synching files against eg Google Drive |
 
 Required by FLUKA:
 | *name* | *install command* | *comment* |
@@ -133,6 +134,21 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo chown -Rv _apt:root ./google-chrome-stable_current_amd64.deb
 sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
+```
+* to install `rclone` from terminal ([ref](https://rclone.org/install/), Linux Installation)
+```
+# Fetch and unpack
+curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+unzip rclone-current-linux-amd64.zip
+cd rclone-*-linux-amd64
+# Copy binary file
+sudo cp rclone /usr/bin/
+sudo chown root:root /usr/bin/rclone
+sudo chmod 755 /usr/bin/rclone
+# Install manpage
+sudo mkdir -p /usr/local/share/man/man1
+sudo cp rclone.1 /usr/local/share/man/man1/
+sudo mandb
 ```
 
 # Cheat Sheet for Installing FLUKA

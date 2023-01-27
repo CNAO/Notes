@@ -31,10 +31,17 @@ This file summarises some infos concerning our VM Linux machines.
 ### Environment variables
 ```
 # .bashrc
+# terminal line behavior:
+# - do not escape $ when tabbing:
+shopt -s direxpand
+# use local numeric interpretation as default C
+export LC_NUMERIC=C
 # env vars for FLUKA
 export FLUPRO=/usr/local/FLUKA/INFN/2021.2.8
 export FLUKA=/usr/local/FLUKA/INFN/2021.2.8
 export FLUFOR=gfortran
+# expand PATH beyond defaults
+export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 ```
 
 ### File System Table

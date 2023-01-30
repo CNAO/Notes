@@ -145,7 +145,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 * to install `rclone` from terminal ([ref](https://rclone.org/install/), Linux Installation)
 ```
 # Fetch and unpack
-curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+wget https://downloads.rclone.org/rclone-current-linux-amd64.zip
 unzip rclone-current-linux-amd64.zip
 cd rclone-*-linux-amd64
 # Copy binary file

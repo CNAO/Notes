@@ -164,7 +164,7 @@ sudo mandb
 3. Prepare the folder where to install FLUKA: `cd /usr/local ; sudo mkdir -p FLUKA/INFN/2021.2.9 ; cd FLUKA/INFN/2021.2.9`
 4. Move downloaded `.tar.gz` files: `sudo mv ~/Downloads/fluka2021.2* . ; sudo su`
 5. extract them: `tar -xvzf fluka2021.2-data.tar.gz ; tar -xvzf fluka2021.2-linux-gfor64bit-11.2-AA.tar.gz`
-6. Prepare environment for installation: `export FLUPRO=$WPD ; export FLUFOR=gfortran`
+6. Prepare environment for installation: `export FLUPRO=$PWD ; export FLUFOR=gfortran`
 7. Compile: `make ; $FLUPRO/flutil/ldpmqmd`
 8. Make installation available for the linux group `fluka`: `chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `cd ../../../ ;  chown -R root:fluka FLUKA`
 

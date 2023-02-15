@@ -172,7 +172,7 @@ Further notes on the FLUKA installation can be found on the [FLUKA website](http
 
 # Cheat Sheet for Installing FLAIR
 1. Download `.tar.gz` files from the [FLAIR website](https://www.fluka.org/flair/download.html); 
-2. All operations should be done as admin: `sudo su`<
+2. All operations should be done as admin: `sudo su`;
 3. Extract downloaded `.tar.gz` files: `tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`
 4. Install `flair`: `cd flair-2.3 ; make install ; cd -`
 5. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; make install ; cd -`

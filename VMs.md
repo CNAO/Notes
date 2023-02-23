@@ -123,6 +123,7 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | make | `sudo apt-get install make` | Linux utility to compile exes |
 | xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |
 | htop | `sudo apt-get install htop` | a user friendly interface to linux `top` |
+| open vm tools | `sudo apt-get install open-vm-tools*` | VM tools for Linux guest |
 | rclone | see Notes | command-line interface for synching files against eg Google Drive |
 
 Required by FLUKA:

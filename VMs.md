@@ -26,7 +26,7 @@ This file summarises some infos concerning our VM Linux machines.
 
 ### Adding a new user
 * add them to the necessary groups;
-* create a dedicated folder on `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
+* create a dedicated folder in `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
 
 ### Environment variables
 ```
@@ -37,8 +37,8 @@ shopt -s direxpand
 # use local numeric interpretation as default C
 export LC_NUMERIC=C
 # env vars for FLUKA
-export FLUPRO=/usr/local/FLUKA/INFN/2021.2.8
-export FLUKA=/usr/local/FLUKA/INFN/2021.2.8
+export FLUPRO=/usr/local/FLUKA/INFN/2021.2.9
+export FLUKA=${FLUPRO}
 export FLUFOR=gfortran
 # expand PATH beyond defaults
 export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
@@ -77,15 +77,22 @@ export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 
 ### Adding a new user
 * add them to the necessary groups;
-* create a dedicated folder on `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
+* create a dedicated folder in `DATA`, e.g.: `drwxrwxr-x 2 amereghe amereghe  4096 gen 20 15:20 amereghe/`
 
 ### Environment variables
 ```
 # .bashrc
+# terminal line behavior:
+# - do not escape $ when tabbing:
+shopt -s direxpand
+# use local numeric interpretation as default C
+export LC_NUMERIC=C
 # env vars for FLUKA
 export FLUPRO=/usr/local/FLUKA/INFN/2021.2.9
 export FLUKA=${FLUPRO}
 export FLUFOR=gfortran
+# expand PATH beyond defaults
+export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 ```
 
 ### File System Table
@@ -101,7 +108,7 @@ export FLUFOR=gfortran
 * add existing user to existing group: `$ sudo usermod -aG <myGroupName> <myUserName>` (from [link](https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/));
 * mount shared folders (VMware):
 `sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000` (from [link](https://askubuntu.com/questions/29284/how-do-i-mount-shared-folders-in-ubuntu-using-vmware-tools))
-* to enter bios: press `F2`;
+* to enter bios: press `F2` (from [link](https://www.xmodulo.com/how-to-change-the-boot-order-of-guest-vm-on-vmware-player.html));
 
 # Some useful programs
 Nota bene: installation commands are referred to Ubuntu 22.04 LTS
@@ -111,7 +118,7 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | emacs | `sudo apt-get install emacs` | text file editor |
 | meld | `sudo apt-get install meld` | text file editor - useful for comparing text files |
 | git | `sudo apt-get install git` | revision tracking system |
-| gparted | `sudo apt-get install gparted` | tool to partition filesystem |
+| gparted | `sudo apt-get install gparted` | tool to view partitions on filesystem |
 | tkdiff | `sudo apt-get install tkdiff` | a tool for diffing ASCII files (includes `tk` and `libtk`) |
 | make | `sudo apt-get install make` | Linux utility to compile exes |
 | xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |

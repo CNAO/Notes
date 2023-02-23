@@ -44,7 +44,6 @@ export FLUFOR=gfortran
 export PCNAO=/mnt/hgfs/PCNAO
 export TCNAO=/mnt/hgfs/TCNAO
 export AREA_RICERCA=/mnt/hgfs/Area_Ricerca
-export ScambioClinicaTecnica=/mnt/hgfs/ScambioClinicaTecnica
 export VBSHARE=/mnt/hgfs/VBSHARE
 export DATA=/mnt/DATA/$USER
 # expand PATH beyond defaults

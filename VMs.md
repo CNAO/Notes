@@ -40,6 +40,13 @@ export LC_NUMERIC=C
 export FLUPRO=/usr/local/FLUKA/INFN/2021.2.9
 export FLUKA=${FLUPRO}
 export FLUFOR=gfortran
+# some useful paths
+export PCNAO=/mnt/hgfs/PCNAO
+export TCNAO=/mnt/hgfs/TCNAO
+export AREA_RICERCA=/mnt/hgfs/Area_Ricerca
+export ScambioClinicaTecnica=/mnt/hgfs/ScambioClinicaTecnica
+export VBSHARE=/mnt/hgfs/VBSHARE
+export DATA=/mnt/DATA/$USER
 # expand PATH beyond defaults
 export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 ```

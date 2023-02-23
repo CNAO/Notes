@@ -57,6 +57,7 @@ export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 | *VM Path* | *Description* | 
 | --- | --- |
 | `/home/<username>` | home folder of each user. Desktop is found at `/home/<username>/Desktop` |
+| `/mnt/DATA/<username>` | parent folder for storing data (e.g. from simulation) of each user. |
 | `/mnt/hgfs/PCNAO` | mount path of shared disk `P:`. Read only! |
 | `/mnt/hgfs/TCNAO` | mount path of shared disk `T:`. Read only! |
 | `/mnt/hgfs/Area_Ricerca` | mount path of shared folder `S:\Area Ricerca`. |
@@ -91,6 +92,13 @@ export LC_NUMERIC=C
 export FLUPRO=/usr/local/FLUKA/INFN/2021.2.9
 export FLUKA=${FLUPRO}
 export FLUFOR=gfortran
+# some useful paths
+export PCNAO=/mnt/hgfs/PCNAO
+export TCNAO=/mnt/hgfs/TCNAO
+export AREA_RICERCA=/mnt/hgfs/Area_Ricerca
+export ScambioClinicaTecnica=/mnt/hgfs/ScambioClinicaTecnica
+export VBSHARE=/mnt/hgfs/VBSHARE
+export DATA=/mnt/DATA/$USER
 # expand PATH beyond defaults
 export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 ```

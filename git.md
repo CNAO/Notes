@@ -8,10 +8,11 @@
 
 ### Start working on an existing project repo
 * [github.com](http://github.com "github.com"): fork project (use web interface);
-* set up a copy of the repo on your local machine by cloning your fork: `git clone <git_URL_of_your_fork>`;
+* set up a copy of the repo on your local machine by cloning your fork: `git clone <git_URL_of_your_fork>`.
 Please make use of the `ssh` mechanism for cloning, such that you have also write rights when pushing to your fork;
-* add the project repo as `remote upstream`: `git remote add upstream <git_URL_of_project_repo>`;
-Please make use of the `https` mechanism, such that you don't have write rights and an accidental push to the project repo is hence rejected.
+* add the project repo as `remote upstream`: `git remote add upstream <git_URL_of_project_repo>`.
+Please make use of the `https` mechanism, such that you don't have write rights and an accidental push to the project repo is hence rejected;
+* if the repo has submodules, you need to download the respective material by issueing: `git submodule init ; git submodule update`
 
 ### Branch off from a Branch from a Third-Party Fork
 * add the fork as `remote <remote_nickname>`: `git remote add EFfork https://github.com/enricofelcini/gantry.git`;

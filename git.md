@@ -142,7 +142,7 @@ You can abort an on-going merge before resolving conflicts via `git merge --abor
 * delete a branch locally: `git branch -d localBranchName`;
 * delete a branch remotely: `git push origin --delete remoteBranchName`;
 
-### Changing Name to Repo [credits](https://stackoverflow.com/questions/2041993/how-do-i-rename-a-git-repository)
+### Changing Name to Repo ([credits](https://stackoverflow.com/questions/2041993/how-do-i-rename-a-git-repository))
 * Go to the remote host and follow the [host's instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository) to rename the project;
 * Go to your local repository directory, and set the new URL: `git remote set-url origin git@github.com:User/project-new.git`;
 

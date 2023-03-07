@@ -135,12 +135,16 @@ If you want to undo some of the latest commits, you have to (credits to [CBBaile
 3. move the branch pointer back to the previous HEAD: `git reset --soft HEAD@{1}`;
 4. `git commit -m "Revert to 56e05fced"`
 
-### Abort a Merge
+### Aborting a Merge
 You can abort an on-going merge before resolving conflicts via `git merge --abort`.
 
 ### Deleting a Branch
 * delete a branch locally: `git branch -d localBranchName`;
 * delete a branch remotely: `git push origin --delete remoteBranchName`;
+
+### Changing Name to Repo [credits](https://stackoverflow.com/questions/2041993/how-do-i-rename-a-git-repository)
+* Go to the remote host and follow the [host's instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository) to rename the project;
+* Go to your local repository directory, and set the new URL: `git remote set-url origin git@github.com:User/project-new.git`;
 
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));

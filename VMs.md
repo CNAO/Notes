@@ -149,6 +149,7 @@ Required by FLUKA:
 Required by FLAIR:
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
+| py-dev | `sudo apt-get install python3-dev` | `python3` development module |
 | numpy | `sudo apt-get install python3-numpy` | `python3` module for numerical calculus |
 | scipy | `sudo apt-get install python3-scipy` | `python3` module for scientific calculus |
 | dicom | `sudo apt-get install python3-dicom` | `python3` module for handling dicom images |

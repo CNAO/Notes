@@ -198,7 +198,7 @@ Further notes on the FLUKA installation can be found on the [FLUKA website](http
 2. All operations should be done as admin: `sudo su`;
 3. Extract downloaded `.tar.gz` files: `tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`
 4. Install `flair`: `cd flair-2.3 ; make install ; cd -`
-5. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; make install ; cd -`
-6. Make installation available for the linux group `fluka`: `cd /usr/local/flair ; chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `chown -R root:fluka .`
+5. Install `geoviewer`: `cd flair-geoviewer-2.3 ; make ; make install ; cd -` . In case of problems with `python` (e.g. `python: No such file or directory` or `python-config: No such file or directory`), please prepare the appropriate links in `/usr/bin`, e.g. `cd /usr/bin; ln -s python3 python; ln -s python3-config python-config; cd -`
+7. Make installation available for the linux group `fluka`: `cd /usr/local/flair ; chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `chown -R root:fluka .`
 
 Further notes on the FLAIR installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)

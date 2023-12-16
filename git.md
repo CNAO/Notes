@@ -146,6 +146,9 @@ You can abort an on-going merge before resolving conflicts via `git merge --abor
 * Go to the remote host and follow the [host's instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository) to rename the project;
 * Go to your local repository directory, and set the new URL: `git remote set-url origin git@github.com:User/project-new.git`;
 
+### Extracting a Subfolder of a Repo and Making a New Repo out of it
+* please see [these](https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository) clear guidelines; an additional python package called [git-filter-repo](https://github.com/newren/git-filter-repo/tree/main) is needed.
+
 ## References
 * presentation by K. Sjobak ([slides](https://indico.cern.ch/event/439009/contributions/1927622/attachments/1156220/1662118/2015-09-15_SixTrack-GitHub.pdf "slides"));
 * more on `git upstream`: [git docs](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote "git docs");

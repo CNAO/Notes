@@ -156,6 +156,12 @@ Required by FLAIR:
 | gnuplot | `sudo apt-get install gnuplot` | plotting language |
 |  | `sudo apt install libx11-dev tcl-dev tk-dev python3-tk` | various support libs |
 
+All the above in one go (apart from `open vm tools`):
+
+```sudo apt-get install emacs meld git gparted tkdiff make xterm htop gcc gfortran python3-dev python3-numpy python3-scipy python3-dicom gnuplot libx11-dev tcl-dev tk-dev python3-tk```
+
+This download totals to a bit less than 1 GB.
+
 Notes:
 * to install google chrome from terminal:
 ```

@@ -62,3 +62,36 @@ rm fluka${FLUKAver}*tar.gz
 1. Make installation available for the linux group `fluka`: `cd /usr/local/flair ; chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;` and then `chown -R root:fluka .`
 
 Further notes on the FLAIR installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)
+
+All in one go (bash):
+```
+# become sudo
+sudo su
+
+# set envar variables
+export FLAIRver=2.3
+export FLAIRverLong=2.3-0epy3
+
+# download stuff
+cd Downloads
+wget https://www.fluka.org/flair/flair-${FLAIRverLong}.tgz
+wget https://www.fluka.org/flair/flair-geoviewer-${FLAIRverLong}.tgz
+
+# extract downloaded stuff
+tar -xvzf flair-${FLAIRverLong}.tgz
+tar -xvzf flair-geoviewer-${FLAIRverLong}.tgz
+
+# install flair and geoviewer
+cd flair-${FLAIRver} ; make install ; cd -
+cd flair-geoviewer-${FLAIRver} ; make ; make install ; cd -
+
+# make installation available for the linux group fluka:
+cd /usr/local/flair
+chmod -R a+r .
+find . -type f -executable -exec chmod a+x {} \;
+chown -R root:fluka .
+
+# clean away package files
+cd -
+rm fluka${FLUKAver}*tar.gz
+```

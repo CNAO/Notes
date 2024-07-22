@@ -25,17 +25,24 @@ cd Downloads
 wget --user ${myUserID} --password ${myUserPass} https://www.fluka.org/packages/fluka${FLUKAver}-linux-gfor64bit-${GFORver}-glibc${GLIBCver}-AA.tar.gz
 wget --user ${myUserID} --password ${myUserPass} https://www.fluka.org/packages/fluka${FLUKAver}-data.tar.gz
 # create appropriate folder with downloaded material
-cd /usr/local ; sudo mkdir -p FLUKA/INFN/${FLUKAverLong} ; cd FLUKA/INFN/${FLUKAverLong} ; sudo mv ~/Downloads/fluka${FLUKAver}*tar.gz .
+cd /usr/local
+sudo mkdir -p FLUKA/INFN/${FLUKAverLong}
+cd FLUKA/INFN/${FLUKAverLong}
+sudo mv ~/Downloads/fluka${FLUKAver}*tar.gz .
 sudo tar -xvzf fluka${FLUKAver}-linux-gfor64bit-${GFORver}-glibc${GLIBCver}-AA.tar.gz
 sudo tar -xvzf fluka${FLUKAver}-data.tar.gz
 # prepare for installation
 sudo su
-export FLUPRO=$PWD ; export FLUFOR=gfortran
+export FLUPRO=$PWD
+export FLUKA=${FLUPRO}
+export FLUFOR=gfortran
 # compile
 make ; $FLUPRO/flutil/ldpmqmd
 # make installation available for the linux group fluka
-chmod -R a+r . ; find . -type f -executable -exec chmod a+x {} \;
-cd ../../../ ;  chown -R root:fluka FLUKA
+chmod -R a+r .
+find . -type f -executable -exec chmod a+x {} \;
+cd ../../../
+chown -R root:fluka FLUKA
 # clean away package files
 cd -
 rm fluka${FLUKAver}*tar.gz

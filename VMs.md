@@ -123,51 +123,5 @@ export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 * mount shared folders (VMware):
 `sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000` (from [link](https://askubuntu.com/questions/29284/how-do-i-mount-shared-folders-in-ubuntu-using-vmware-tools))
 * to enter bios: press `F2` (from [link](https://www.xmodulo.com/how-to-change-the-boot-order-of-guest-vm-on-vmware-player.html));
+* to install `open vm tools` for Linux guests from terminal: `sudo apt-get install open-vm-tools*`;
 
-# Some useful programs
-Nota bene: installation commands are referred to Ubuntu 22.04 LTS
-| *name* | *install command* | *comment* |
-| --- | --- | --- |
-| google chrome | see Notes | web browser |
-| emacs | `sudo apt-get install emacs` | text file editor |
-| meld | `sudo apt-get install meld` | text file editor - useful for comparing text files |
-| git | `sudo apt-get install git` | revision tracking system |
-| gparted | `sudo apt-get install gparted` | tool to view partitions on filesystem |
-| tkdiff | `sudo apt-get install tkdiff` | a tool for diffing ASCII files (includes `tk` and `libtk`) |
-| make | `sudo apt-get install make` | Linux utility to compile exes |
-| xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |
-| htop | `sudo apt-get install htop` | a user friendly interface to linux `top` |
-| open vm tools | `sudo apt-get install open-vm-tools*` | VM tools for Linux guest |
-| rclone | see Notes | command-line interface for synching files against eg Google Drive |
-
-Required by FLUKA:
-| *name* | *install command* | *comment* |
-| --- | --- | --- |
-| gcc | `sudo apt-get install gcc` | gnu `C` compiler (includes `libc`) |
-| gfortran | `sudo apt-get install gfortran` | gnu `fortran` compiler |
-
-Required by FLAIR:
-| *name* | *install command* | *comment* |
-| --- | --- | --- |
-| py-dev | `sudo apt-get install python3-dev` | `python3` development module |
-| numpy | `sudo apt-get install python3-numpy` | `python3` module for numerical calculus |
-| scipy | `sudo apt-get install python3-scipy` | `python3` module for scientific calculus |
-| dicom | `sudo apt-get install python3-dicom` | `python3` module for handling dicom images |
-| gnuplot | `sudo apt-get install gnuplot` | plotting language |
-|  | `sudo apt install libx11-dev tcl-dev tk-dev python3-tk` | various support libs |
-
-All the above in one go (apart from `open vm tools`):
-
-```sudo apt-get install emacs meld git gparted tkdiff make xterm htop gcc gfortran python3-dev python3-numpy python3-scipy python3-dicom gnuplot libx11-dev tcl-dev tk-dev python3-tk```
-
-This download totals to a bit less than 1 GB.
-
-Notes:
-* to install google chrome from terminal:
-```
-cd ~/Downloads
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo chown -Rv _apt:root ./google-chrome-stable_current_amd64.deb
-sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-```

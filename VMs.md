@@ -171,21 +171,6 @@ sudo chown -Rv _apt:root ./google-chrome-stable_current_amd64.deb
 sudo chmod -Rv 700 ./google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
-* to install `rclone` from terminal ([ref](https://rclone.org/install/), Linux Installation)
-```
-# Fetch and unpack
-wget https://downloads.rclone.org/rclone-current-linux-amd64.zip
-unzip rclone-current-linux-amd64.zip
-cd rclone-*-linux-amd64
-# Copy binary file
-sudo cp rclone /usr/bin/
-sudo chown root:root /usr/bin/rclone
-sudo chmod 755 /usr/bin/rclone
-# Install manpage
-sudo mkdir -p /usr/local/share/man/man1
-sudo cp rclone.1 /usr/local/share/man/man1/
-sudo mandb
-```
 
 # Cheat Sheet for Installing FLUKA
 1. Prepare a `fluka` linux group and add all the concerned users (including `root`): `sudo addgroup fluka; sudo usermod -aG fluka root`

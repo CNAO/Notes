@@ -74,7 +74,7 @@ In order to have your VM visible directly from the router, please change the net
 2. create appropriate linux aliases to point to the cluster `schedd`, eg (code for `~/.bashrc`):
 ```
 # HTCONDOR remote submission
-my_condor_schedd="\"<192.168.1.100:9618?addrs=192.168.1.100-9618&alias=HP-Z640-WS-linux&noUDP&sock=schedd_4795_8cb5>\""
+my_condor_schedd="\"<192.168.abc.xyz:1234?addrs=192.168.abc.xyz-1234&alias=__MYWONDERFULCLUSTERAP__&noUDP&sock=schedd_abcd_1234>\""
 alias my_condor_ssh_to_job="condor_ssh_to_job -name ${my_condor_schedd}"
 alias my_condor_q="condor_q -global"
 alias my_condor_rm="condor_rm -addr ${my_condor_schedd}"

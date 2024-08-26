@@ -10,7 +10,7 @@
 
 Further notes on the FLUKA installation can be found on the [FLUKA website](http://www.fluka.org/fluka.php?id=ins_run&mm2=3)
 
-All in one go (bash):
+All in one go (bash, as sudo):
 ```
 # bash
 export myUserID=<user_ID>
@@ -20,21 +20,19 @@ export FLUKAverLong=2024.1.0
 export GFORver=11.4
 export GLIBCver=2.35
 
+cd /usr/local
+mkdir -p FLUKA/INFN/${FLUKAverLong}
+cd FLUKA/INFN/${FLUKAverLong}
+
 # download stuff
-cd Downloads
 wget --user ${myUserID} --password ${myUserPass} https://www.fluka.org/packages/fluka${FLUKAver}-linux-gfor64bit-${GFORver}-glibc${GLIBCver}-AA.tar.gz
 wget --user ${myUserID} --password ${myUserPass} https://www.fluka.org/packages/fluka${FLUKAver}-data.tar.gz
 
 # create appropriate folder with downloaded material
-cd /usr/local
-sudo mkdir -p FLUKA/INFN/${FLUKAverLong}
-cd FLUKA/INFN/${FLUKAverLong}
-sudo mv ~/Downloads/fluka${FLUKAver}*tar.gz .
-sudo tar -xvzf fluka${FLUKAver}-linux-gfor64bit-${GFORver}-glibc${GLIBCver}-AA.tar.gz
-sudo tar -xvzf fluka${FLUKAver}-data.tar.gz
+tar -xvzf fluka${FLUKAver}-linux-gfor64bit-${GFORver}-glibc${GLIBCver}-AA.tar.gz
+tar -xvzf fluka${FLUKAver}-data.tar.gz
 
 # prepare for installation
-sudo su
 export FLUPRO=$PWD
 export FLUKA=${FLUPRO}
 export FLUFOR=gfortran

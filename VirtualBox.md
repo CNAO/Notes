@@ -41,7 +41,8 @@ Please open a terminal and type (please note the use of the full path to `VBoxMa
 "C:\Program Files\Oracle\VirtualBox\VBoxManage" guestproperty set [VM Name] /VirtualBox/GuestAdd/SharedFolders/MountPrefix /
 "C:\Program Files\Oracle\VirtualBox\VBoxManage" guestproperty set [VM Name] /VirtualBox/GuestAdd/SharedFolders/MountDIR /home/user
 ```
-References:
+
+## References
 * [askubuntu](https://askubuntu.com/questions/1039465/virtualbox-storage-mount-directory-prefix-verr-permission-denied);
 * [VBox Manual: guest properties](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/vboxmanage-guestproperty.html);
 * [VBox Manual: manually add/remove shared folders](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/vboxmanage-sharedfolder.html);

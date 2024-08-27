@@ -62,14 +62,24 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
 # VMs
+Any CNAO user willing to run simulations on the cluster is supposed to set up a VM because of CNAO IT rules.
+Then, the VM can be connected via WiFi to the cluster.
+It is also possible to keep the laptop regularly connected via LAN cable to the network.
+
 ## VirtualBox
-In order to have your VM visible directly from the router, please change the network settings of the VM (can be done also while the VM is running):
-1. `Settings -> Network`
-2. In the first tab, change from `NAT` to `Bridged Adapter`. Please make sure to select the correct network card (i.e. LAN vs wireless) and under `Advanced` make sure the promiscuous mode to `Allow All`.
+In order to have your VM visible directly by the router, please change the network settings of the VM (better to set this up before switching on the VM):
+1. `Settings -> Network`;
+2. In the first tab (`Adapter 1`), change from `NAT` to `Bridged Adapter`. Please make sure to select the correct network card (i.e. LAN vs wireless) and under `Advanced` make sure the promiscuous mode to `Allow All`;
+
+If the user wants also to have regular access to the internet via LAN, the respective settings must be edited:
+1. `Settings -> Network`;
+2. In the second tab (`Adapter 2`), enable the network card, keep the connection as `NAT`. Please make sure to select the correct network card (e.g. PCnet-FAST III) and under `Advanced` make sure the promiscuous mode to `Allow All`.
 
 # New Users
+If you want to add a new user to the HTCondor cluster, some operations must be performed on the cluster itself and on the laptop from which the user wants to submit jobs.
+
 ## Operations to be performed on the cluster
-1. ADMIN: add a user (no need for admin rights) to each cluster machine matching that of the user on their own laptop;
+1. ADMIN: add a user (no need for admin rights) to each cluster machine. The user name on the cluster machines *must* match that of the user on their own laptop;
 2. USER: `ssh` on the cluster AP machine and fetch an HTCondor IDToken for the remote access of the user: `condor_token_fetch -token name_of_laptop` (see the [HTCondor man page](https://htcondor.readthedocs.io/en/latest/users-manual/submitting-a-remote-job.html));
 
 ## Operations to be performed on the laptop of the user

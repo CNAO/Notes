@@ -12,7 +12,8 @@ Further notes on the FLUKA installation can be found on the [FLUKA website](http
 
 All in one go (bash, as sudo):
 ```
-# bash
+#!/usr/bin/bash
+# set env vars
 export myUserID=<user_ID>
 export myUserPass=<user_pass>
 export FLUKAver=2024.1
@@ -20,6 +21,7 @@ export FLUKAverLong=2024.1.0
 export GFORver=11.4
 export GLIBCver=2.35
 
+# go to suitable folder
 cd /usr/local
 mkdir -p FLUKA/INFN/${FLUKAverLong}
 cd FLUKA/INFN/${FLUKAverLong}
@@ -61,17 +63,19 @@ rm fluka${FLUKAver}*tar.gz
 
 Further notes on the FLAIR installation can be found on the [FLAIR website](https://www.fluka.org/flair/download.html)
 
-All in one go (bash):
+All in one go (bash, as sudo):
 ```
-# become sudo
-sudo su
-
-# set envar variables
+#!/usr/bin/bash
+# set env vars
 export FLAIRver=2.3
 export FLAIRverLong=2.3-0epy3
 
+# go to suitable folder
+cd /usr/local
+mkdir -p flair
+cd flair
+
 # download stuff
-cd Downloads
 wget https://www.fluka.org/flair/flair-${FLAIRverLong}.tgz
 wget https://www.fluka.org/flair/flair-geoviewer-${FLAIRverLong}.tgz
 
@@ -84,12 +88,10 @@ cd flair-${FLAIRver} ; make install ; cd -
 cd flair-geoviewer-${FLAIRver} ; make ; make install ; cd -
 
 # make installation available for the linux group fluka:
-cd /usr/local/flair
 chmod -R a+r .
 find . -type f -executable -exec chmod a+x {} \;
 chown -R root:fluka .
 
 # clean away package files
-cd -
-rm fluka${FLUKAver}*tar.gz
+rm flair*-${FLAIRverLong}.tgz
 ```

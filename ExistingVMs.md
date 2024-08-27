@@ -2,6 +2,10 @@
 This file summarises some infos concerning our VM Linux machines.
 
 ## Ubuntu 22.04 LTS on Win machine WS0040
+**!! THIS MACHINE IS NO LONGER AVAILABLE !!**
+
+The material presented here is anyway left for reference.
+
 ### Useful paths
 | *VM Path* | *Description* | 
 | --- | --- |
@@ -59,6 +63,10 @@ export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 ```
 
 ## Ubuntu 22.04 LTS on Win machine WS0024
+**!! THIS MACHINE IS NO LONGER AVAILABLE !!**
+
+The material presented here is anyway left for reference.
+
 ### Useful paths
 | *VM Path* | *Description* | 
 | --- | --- |
@@ -116,10 +124,3 @@ export PATH=${PATH}:${TCNAO}/ARicerca/MADX/5.06.01:${FLUKA}
 # permanently mount DATA readable and writeable by every user
 /dev/sda4	/mnt/DATA	ext4	defaults	0	0
 ```
-
-# Some useful admin commands (Ubuntu)
-* mount shared folders (VMware):
-`sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000` (from [link](https://askubuntu.com/questions/29284/how-do-i-mount-shared-folders-in-ubuntu-using-vmware-tools))
-* to enter bios: press `F2` (from [link](https://www.xmodulo.com/how-to-change-the-boot-order-of-guest-vm-on-vmware-player.html));
-* to install `open vm tools` for Linux guests from terminal: `sudo apt-get install open-vm-tools*`;
-

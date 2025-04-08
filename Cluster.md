@@ -48,7 +48,8 @@ This download totals to a bit less than 1 GB.
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
 | google chrome | see Notes | web browser |
-| openssh | `sudo apt install openssh-server ` | package installed on a machine to make it reachable via `ssh` (see Notes for checks) |
+| openssh | `sudo apt install openssh-server ` | package necessary to make a machine reachable via `ssh` from remote (see Notes for checks) |
+| ifmetric | `sudo apt install ifmetric` | package necessary to reset metrics/priorities of network connections |
 
 Notes:
 * to check that `openssh` is up and running: `sudo service ssh status`
@@ -98,6 +99,12 @@ alias my_condor_submit="condor_submit -addr ${my_condor_schedd}"
 alias my_condor_transfer_data="condor_transfer_data -addr ${my_condor_schedd}"
 ```
 The actual schedd name/address can be found issueing the following command in a terminal on the laptop of the user: `condor_status -schedd -l | grep MyAddress`;
+
+# Addition of a machine
+This section describe how to insert a new linux machine in the cluster
+1. install `ifmetric`, to set priority of newtwork connections (see [here](https://superuser.com/questions/331720/how-do-i-set-the-priority-of-network-connections-in-ubuntu));
+2. install HTCondor (see [here](https://htcondor.readthedocs.io/en/latest/getting-htcondor/install-linux-as-root.html)), setting the appropriate role;
+3. pay attention to users, groups, permissions to paths!
 
 # Full Shutdown/Restart of Cluster
 This section describes some steps to be taken by the admin and/or by any user of the cluster before a full shutdown or restart of the cluster.

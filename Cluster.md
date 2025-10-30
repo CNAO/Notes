@@ -21,6 +21,8 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | make | `sudo apt-get install make` | Linux utility to compile exes |
 | xterm | `sudo apt-get install xterm` | a light version of the Linux terminal |
 | htop | `sudo apt-get install htop` | a user friendly interface to linux `top` |
+| tree | `sudo apt-get install tree` | tool to list folders and material therein contained on a terminal line in a user-friendly fashion |
+| curl | `sudo apt-get install curl` | tool to download files from web with terminal line calls |
 
 Required by FLUKA:
 | *name* | *install command* | *comment* |
@@ -40,7 +42,7 @@ Required by FLAIR:
 
 All the above in one go:
 
-```sudo apt-get install emacs meld git gparted tkdiff make xterm htop gcc gfortran python3-dev python3-numpy python3-scipy python3-dicom gnuplot libx11-dev tcl-dev tk-dev python3-tk```
+```sudo apt-get install emacs meld git gparted tkdiff make xterm htop tree curl gcc gfortran python3-dev python3-numpy python3-scipy python3-dicom gnuplot libx11-dev tcl-dev tk-dev python3-tk```
 
 This download totals to a bit less than 1 GB.
 

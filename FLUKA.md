@@ -1,4 +1,4 @@
-# Cheat Sheet for Installing FLUKA
+# Cheat Sheet for Installing FLUKA on a Linux Machine (e.g. Ubuntu)
 1. Prepare a `fluka` linux group and add all the concerned users (including `root`): `sudo addgroup fluka; sudo usermod -aG fluka root`
 1. Download `.tar.gz` files from the [fluka website](https://www.fluka.org/fluka.php?id=download&sub=packages_ok);
 1. Prepare the folder where to install FLUKA: `cd /usr/local ; sudo mkdir -p FLUKA/INFN/2021.2.9 ; cd FLUKA/INFN/2021.2.9`
@@ -53,7 +53,7 @@ cd -
 rm fluka${FLUKAver}*tar.gz
 ```
 
-# Cheat Sheet for Installing FLAIR
+# Cheat Sheet for Installing FLAIR on a Linux Machine (e.g. Ubuntu)
 1. Download `.tar.gz` files from the [FLAIR website](https://www.fluka.org/flair/download.html);
 1. All operations should be done as admin: `sudo su`;
 1. Extract downloaded `.tar.gz` files: `tar -xvzf flair-2.3-0cpy3.tgz ; tar -xvzf flair-geoviewer-2.3-0cpy3.tgz`

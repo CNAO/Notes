@@ -103,20 +103,25 @@ alias my_condor_transfer_data="condor_transfer_data -addr ${my_condor_schedd}"
 The actual schedd name/address can be found issueing the following command in a terminal on the laptop of the user: `condor_status -schedd -l | grep MyAddress`;
 
 # Addition of a machine
-This section describe how to insert a new linux machine in the cluster
+This section drafts how to insert a new linux machine in the cluster
 1. install `ifmetric`, to set priority of newtwork connections (see [here](https://superuser.com/questions/331720/how-do-i-set-the-priority-of-network-connections-in-ubuntu));
 2. install HTCondor (see [here](https://htcondor.readthedocs.io/en/latest/getting-htcondor/install-linux-as-root.html)), setting the appropriate role;
 3. pay attention to users, groups, permissions to paths!
 
 # Removal of a machine
-This section describe how to remove a linux machine from the cluster
+This section describes how to remove a linux machine from the cluster
 
 ## Execution node
 1. On the worker node, stop the Condor daemon. This operation can be done in two ways:
-   1. graceful shutdown (recommended): the node will wait for existing jobs to finish before shutting down, and no new jobs will start. To do so, run the command `condor_off -startd` on the node;
-   2. immediate removal: existing jobs witll be mercilessly killed. To do so, run the command `condor_vacate_job <jobId>` on the node;
+   1. graceful shutdown (recommended): the node will wait for existing jobs to finish before shutting down, and no new jobs will start. To do so, run the command `condor_off -startd` on the node (as root);
+   2. immediate removal: existing jobs witll be mercilessly killed. To do so, run the command `condor_vacate_job <jobId>` on the node (as root);
 2. (optional) remove the node from the pool: if the node has crashed or you need to forcibly remove it from the central manager's view, you must invalidate its advertisement in the collector. To do so, run the command `condor_advertise` on the node;
 3. (optional) manually clean up the `EXECUTE` directory if it persists after the service stops, particularly on Windows, to free up disk space.
+
+# Change configuration of a machine
+This section describe how to remove a linux machine from the cluster
+1. On the worker node, update (as root) all the concerned HTCondor configuration files -- either existing or new ones. Please keep in mind that configuration files are stored in `/etc/condor/config.d`;
+2. Restart the `condor_master` daemon on the worker node and all the child ones: `condor_restart` (as root);
 
 # Full Shutdown/Restart of Cluster
 This section describes some steps to be taken by the admin and/or by any user of the cluster before a full shutdown or restart of the cluster.

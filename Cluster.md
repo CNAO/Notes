@@ -108,6 +108,16 @@ This section describe how to insert a new linux machine in the cluster
 2. install HTCondor (see [here](https://htcondor.readthedocs.io/en/latest/getting-htcondor/install-linux-as-root.html)), setting the appropriate role;
 3. pay attention to users, groups, permissions to paths!
 
+# Removal of a machine
+This section describe how to remove a linux machine from the cluster
+
+## Execution node
+1. On the worker node, stop the Condor daemon. This operation can be done in two ways:
+   1. graceful shutdown (recommended): the node will wait for existing jobs to finish before shutting down, and no new jobs will start. To do so, run the command `condor_off -startd` on the node;
+   2. immediate removal: existing jobs witll be mercilessly killed. To do so, run the command `condor_vacate_job <jobId>` on the node;
+2. (optional) remove the node from the pool: if the node has crashed or you need to forcibly remove it from the central manager's view, you must invalidate its advertisement in the collector. To do so, run the command `condor_advertise` on the node;
+3. (optional) manually clean up the `EXECUTE` directory if it persists after the service stops, particularly on Windows, to free up disk space.
+
 # Full Shutdown/Restart of Cluster
 This section describes some steps to be taken by the admin and/or by any user of the cluster before a full shutdown or restart of the cluster.
 

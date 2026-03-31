@@ -114,14 +114,15 @@ This section describes how to remove a linux machine from the cluster
 ## Execution node
 1. On the worker node, stop the Condor daemon. This operation can be done in two ways:
    1. graceful shutdown (recommended): the node will wait for existing jobs to finish before shutting down, and no new jobs will start. To do so, run the command `condor_off -startd` on the node (as root);
-   2. immediate removal: existing jobs witll be mercilessly killed. To do so, run the command `condor_vacate_job <jobId>` on the node (as root);
+   2. immediate removal: existing jobs will be mercilessly killed. To do so, run the command `condor_vacate_job <jobId>` on the node (as root);
 2. (optional) remove the node from the pool: if the node has crashed or you need to forcibly remove it from the central manager's view, you must invalidate its advertisement in the collector. To do so, run the command `condor_advertise` on the node;
 3. (optional) manually clean up the `EXECUTE` directory if it persists after the service stops, particularly on Windows, to free up disk space.
 
 # Change configuration of a machine
-This section describe how to remove a linux machine from the cluster
-1. On the worker node, update (as root) all the concerned HTCondor configuration files -- either existing or new ones. Please keep in mind that configuration files are stored in `/etc/condor/config.d`;
-2. Restart the `condor_master` daemon on the worker node and all the child ones: `condor_restart` (as root);
+This section describes how to remove a linux machine from the cluster
+1. Disconnect the worker node from the pool. To do so, please follow the steps in the section [Removal of a machine](#removal-of-a-machine)
+2. On the worker node, update (as root) all the concerned HTCondor configuration files -- either existing or new ones. Please keep in mind that configuration files are stored in `/etc/condor/config.d`;
+3. Restart the `condor_master` daemon on the worker node and all the child ones: `condor_restart` (as root);
 
 # Full Shutdown/Restart of Cluster
 This section describes some steps to be taken by the admin and/or by any user of the cluster before a full shutdown or restart of the cluster.

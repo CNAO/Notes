@@ -131,3 +131,11 @@ This section describes some steps to be taken by the admin and/or by any user of
 
 ## Operations to be Performed *AFTER* the Cluster is Re-started
 1. *ANY USER*: if IP addresses are used to communicate with daemons/machines and aliases are used, please update the variable `my_condor_schedd` in the `.bashrc` file (or equivalent for any other shell) with the updated value. The updated value can be retrieved with the command `condor_status -schedd -l | grep MyAddress`; in general, the socket value is updated.
+
+# HTCondor Cheat Sheet
+This is a list of useful, but more complex, HTCondor commands: enjoy the output!
+
+* list all available resources, machine by machine:
+```
+condor_status -constraint "State == \"Unclaimed\"" -af:h Name Cpus Memory GPUs | column -t
+```

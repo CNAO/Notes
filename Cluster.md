@@ -24,13 +24,13 @@ Nota bene: installation commands are referred to Ubuntu 22.04 LTS
 | tree | `sudo apt-get install tree` | tool to list folders and material therein contained on a terminal line in a user-friendly fashion |
 | curl | `sudo apt-get install curl` | tool to download files from web with terminal line calls |
 
-Required by FLUKA:
+## Required by FLUKA
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
 | gcc | `sudo apt-get install gcc` | gnu `C` compiler (includes `libc`) |
 | gfortran | `sudo apt-get install gfortran` | gnu `fortran` compiler |
 
-Required by FLAIR:
+## Required by FLAIR
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
 | py-dev | `sudo apt-get install python3-dev` | `python3` development module |
@@ -46,7 +46,7 @@ All the above in one go:
 
 This download totals to a bit less than 1 GB.
 
-Required by Xsuite:
+## Required by Xsuite
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
 | pip | `sudo apt-get install python3-pip` | `python3` installer |

@@ -46,6 +46,23 @@ All the above in one go:
 
 This download totals to a bit less than 1 GB.
 
+Required by Xsuite:
+| *name* | *install command* | *comment* |
+| --- | --- | --- |
+| pip | `sudo apt-get install python3-pip` | `python3` installer |
+| cpymad | `sudo pip install cpymad` | to import MADX lattices |
+| xsuite | `sudo pip install xsuite` | xsuite installation (incl. `xobjects`, `xdeps`, `xpart`, `xtrack`, `xfields`, `xcoll`) with dependencies |
+| xwakes | `sudo pip install xwakes` | xwake component |
+| xplt | `sudo pip install xplt` | for plotting |
+| jupyter | `sudo pip install jupyter` | to be able to create and open jupyter notebooks |
+| ipympl | `sudo pip install ipympl` | to be able to deploy nteractive graphs in jupyter notebooks |
+
+All the above in (almost) one go:
+```
+sudo apt-get install python3-pip
+sudo pip install cpymad xsuite xwakes xplt jupyter ipympl
+```
+
 ## Additional Packages
 | *name* | *install command* | *comment* |
 | --- | --- | --- |
